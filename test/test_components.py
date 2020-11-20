@@ -1,6 +1,4 @@
 # Solves the problem of adding two values a and b
-import sys
-sys.path.append(".")
 from components import Solver, CheckSolver
 
 import unittest

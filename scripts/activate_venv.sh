@@ -16,3 +16,4 @@ then
 else
 	source ${VIRTUAL_ENV_DIR}/bin/activate
 fi
+export PYTHON_PATH=${__root_dir}:${PYTHON_PATH-}
