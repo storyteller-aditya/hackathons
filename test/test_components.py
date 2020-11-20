@@ -1,7 +1,9 @@
 # Solves the problem of adding two values a and b
 import sys
 sys.path.append(".")
-from solution import Solver, CheckSolver
+from components import Solver, CheckSolver
+
+import unittest
 
 
 test_cases = [
@@ -21,5 +23,6 @@ class AddSolver(Solver):
 		return input_value["a"] + input_value["b"]
 	
 
-if __name__ == "__main__":
-	CheckSolver.check_solver(test_cases, AddSolver())
+class TestComponents(unittest.TestCase):
+	def test_components(self):
+		CheckSolver.check_solver(test_cases, AddSolver())
