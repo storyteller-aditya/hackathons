@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+set -o errexit
+set -o pipefail
+set -o nounset
+
+
 __scripts_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 __root_dir="$(cd "$(dirname "${__scripts_dir}")" && pwd)"
 
@@ -16,4 +21,4 @@ then
 else
 	source ${VIRTUAL_ENV_DIR}/bin/activate
 fi
-export PYTHON_PATH=${__root_dir}:${PYTHON_PATH-}
+export PYTHONPATH=${__root_dir}:${PYTHONPATH-}
