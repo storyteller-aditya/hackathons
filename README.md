@@ -21,14 +21,19 @@ This repository holds the solutions to various LeetCode problems that I have pra
 
 
 ## How to Validate the Solutions
-In order to validate all solutions, execute the following command:
+In order to validate that all solutions have been correctly written, execute the following command:
 ```bash
-bash scripts/validate_solutions.sh
+bash scripts/validate_solutions.sh lint
 ```
 
 It will create / activate the virtual environment and then ensure that the TestSolver executes correctly for each of the solutions in the solutions/ directory.
 
-In order to validate the correctness of a given solution, execute the following command instead:
+In order to check the correctness of a solution, execute the following command instead:
 ```bash
-bash scripts/validate_solutions.sh FILENAME.py
+bash scripts/validate_solutions.sh check --problem FILENAME.py
+```
+
+Finally, to check the correctness of all solutions execute the below command:
+```bash
+bash scripts/validate_solutions.sh check
 ```
