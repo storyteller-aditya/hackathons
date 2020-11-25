@@ -33,7 +33,8 @@ class CheckSolver:
 				f"\nSolution Output: {solution_output}"
 				f"\nOutput Value: {output_value}"
 			)
-			if isinstance(output_value, int) or isinstance(output_value, float):
+			if (isinstance(output_value, int) or isinstance(output_value, float)
+					or isinstance(output_value, bool)):
 				assert solution_output == output_value, error_message
 			else:
 				raise NotImplementedError
