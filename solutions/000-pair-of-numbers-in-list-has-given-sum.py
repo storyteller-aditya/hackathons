@@ -3,6 +3,18 @@
 # Example: With nums = [10, 15, 3, 7] and sum_val = 17, return True
 # since 10+7=17
 
+# Approach: 
+# We define the complement of a number as (sum_val - number)
+# Our solution is to iterate once through nums while performing
+# the following two operations:
+# - Building a set containing the complement of the numbers observed so far
+# - Checking if the current number is found within this set
+# If the current number is found within this set, then that implies that its
+# complement value has been before in nums. In other words, a pair of numbers
+# adding to the sum_val does indeed exist and it is equal to 
+# (current number, sum_val - current number)
+# Time Complexity: O(N)
+
 from components import Solver
 
 test_cases = [
@@ -23,10 +35,8 @@ test_cases = [
 ]
 
 
-# 'complement_values' is a set containing the complement of the numbers
-# observed so far, with complement defined as (sum_val - number)
-# If a number is found within complement_values, then its complement
-# has been seen before implying that a pair of numbers does exist
+# 'complement_values' is a set containing the complements of the numbers
+# observed so far while iterating through nums
 complement_values = set()
 
 

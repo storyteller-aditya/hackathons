@@ -15,7 +15,7 @@ This repository holds the solutions to various LeetCode / Daily COding problems 
 
 
 ## Anatomy of a Solution
-- Each solution begins with a comment describing the problem statement
+- Each solution begins with a comment describing the problem statement and an optional approach
 - Following that, the test cases are defined as a list of dictionaries, each one containing two keys - the "input" and the desired "output"
 - Finally, a ProblemSolver class inherits the Solver and defines the solve() method
 
