@@ -17,6 +17,7 @@
 
 from components import Solver
 
+
 test_cases = [
 	{
 		"input": {
