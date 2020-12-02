@@ -56,7 +56,7 @@ test_cases = [
 ]
 
 
-# The Tree Node containing pointers to left and right children as well as
+# The Tree Node containing references to left and right children as well as
 # its parent, allowing it to built from leaf to root
 class Node:
 	def __init__(self, left=None, right=None, val=None):

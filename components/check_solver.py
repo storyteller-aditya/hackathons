@@ -33,8 +33,10 @@ class CheckSolver:
 				f"\nSolution Output: {solution_output}"
 				f"\nOutput Value: {output_value}"
 			)
-			if (isinstance(output_value, int) or isinstance(output_value, float)
-					or isinstance(output_value, bool)):
+			if (isinstance(output_value, int) 
+					or isinstance(output_value, float)
+					or isinstance(output_value, bool)
+					or isinstance(output_value, str)):
 				assert solution_output == output_value, error_message
 			elif isinstance(output_value, list):
 				for sol, out in zip(solution_output, output_value):
