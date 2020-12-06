@@ -110,6 +110,7 @@ def check(args):
 		lint_solution(file_name)
 		check_solution(file_name)
 		LOGGER.info(f"{file_name} is correct")
+	LOGGER.info("All solutions are correct")
 
 
 if __name__ == "__main__":

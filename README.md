@@ -1,6 +1,6 @@
 # Solutions to LeetCode Problems
 
-This repository holds the solutions to various LeetCode problems that I have practiced over time.
+This repository holds the solutions to various LeetCode / Daily COding problems that I have practiced over time.
 
 ## Composition of the Repo
 - components: This package defines the classes that make up every solution:
@@ -15,7 +15,7 @@ This repository holds the solutions to various LeetCode problems that I have pra
 
 
 ## Anatomy of a Solution
-- Each solution begins with a comment linking to the appropriate LeetCode problem statement
+- Each solution begins with a comment describing the problem statement and an optional approach
 - Following that, the test cases are defined as a list of dictionaries, each one containing two keys - the "input" and the desired "output"
 - Finally, a ProblemSolver class inherits the Solver and defines the solve() method
 
