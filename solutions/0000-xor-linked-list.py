@@ -1,34 +1,40 @@
-# A XOR linked list is a more memory-efficent way of implementing a
-# doubly-ended linked list. A normal doubly-ended linked list contains
-# addresses of both its previous element and its next element but a XOR
-# linked list contains only the XOR of previous and the next element.
-# Implement the add(element) which adds an element to the end and the 
-# get(idx) function that returns the element at idx.
+"""
+Problem:
+A XOR linked list is a more memory-efficent way of implementing a
+doubly-ended linked list. A normal doubly-ended linked list contains
+addresses of both its previous element and its next element but a XOR
+linked list contains only the XOR of previous and the next element.
+Implement the add(element) which adds an element to the end and the 
+get(idx) function that returns the element at idx.
+"""
 
-# Approach: XOR is a binary mathematical operation that is defined as:
-# 0 XOR 0 = 0
-# 0 XOR 1 = 1
-# 1 XOR 0 = 1
-# 1 XOR 1 = 1
-# where all numbers are defined in binary (base 2).
-# Furthermore, a XOR b is equal to the XOR of the bits comprising a and b
-# at the corresponding places.
-# We shall use the following pieces in information to solve this problem:
-# - a XOR a = 0. This is because when each bit comprising a is XORed
-#   with itself the output is 0. 
-# - a XOR 0 = a. This is because when each bit comprising a is XORed with 0
-#   it returns the value of the bit itself.
-# - The XOR operator is associative i.e. (a XOR b) XOR c = a XOR (b XOR c)
-# Given three nodes in order X, Y and Z, we compute the address of Z as follows:
-# Let address of X be x and the address of Z that we need to compute be z
-# Let the XOR of the neigbor addresses of Y be n_y
-# Since n_y = x XOR z
-# Therefore x XOR n_y = x XOR (x XOR z) = (x XOR x) XOR z = 0 XOR z = z
-# Put simply, if we XOR the address of the previous element with the
-# XOR of neighbors of the current element we get the address of the next.
-# This is how we implement the get(idx) operation in O(N).
-# Further, add(element) is merely creating a new node after iterating
-# to the end of the list.
+"""
+Approach: 
+XOR is a binary mathematical operation that is defined as:
+0 XOR 0 = 0
+0 XOR 1 = 1
+1 XOR 0 = 1
+1 XOR 1 = 1
+where all numbers are defined in binary (base 2).
+Furthermore, a XOR b is equal to the XOR of the bits comprising a and b
+at the corresponding places.
+We shall use the following pieces in information to solve this problem:
+- a XOR a = 0. This is because when each bit comprising a is XORed
+  with itself the output is 0. 
+- a XOR 0 = a. This is because when each bit comprising a is XORed with 0
+  it returns the value of the bit itself.
+- The XOR operator is associative i.e. (a XOR b) XOR c = a XOR (b XOR c)
+Given three nodes in order X, Y and Z, we compute the address of Z as follows:
+Let address of X be x and the address of Z that we need to compute be z
+Let the XOR of the neigbor addresses of Y be n_y
+Since n_y = x XOR z
+Therefore x XOR n_y = x XOR (x XOR z) = (x XOR x) XOR z = 0 XOR z = z
+Put simply, if we XOR the address of the previous element with the
+XOR of neighbors of the current element we get the address of the next.
+This is how we implement the get(idx) operation in O(N).
+Further, add(element) is merely creating a new node after iterating
+to the end of the list.
+"""
 
 
 from components import Solver

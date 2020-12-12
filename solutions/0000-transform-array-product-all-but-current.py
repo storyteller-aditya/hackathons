@@ -1,41 +1,47 @@
-# Given an array of integers nums, return a transformed version where each
-# element is the product of all elements in the array but the current one
-# Example: With nums = [1, 2, 3, 4, 5], the array to be returned is
-# [2*3*4*5, 1*3*4*5, 1*2*4*5, 1*2*3*5, 1*2*3*4] i.e. [120, 60, 40, 30, 24]
-# Additional Challenge: Try not to use division
+"""
+Problem:
+Given an array of integers nums, return a transformed version where each
+element is the product of all elements in the array but the current one
+Example: With nums = [1, 2, 3, 4, 5], the array to be returned is
+[2*3*4*5, 1*3*4*5, 1*2*4*5, 1*2*3*5, 1*2*3*4] i.e. [120, 60, 40, 30, 24]
+Additional Challenge: Try not to use division
+"""
 
-# Approach #1:
-# Multiply all elements of the array to get the overall product. Then create
-# the new array by dividing the overall product by each element of nums.
-# Furthermore, to handle the edge case of some elements being zero, while
-# building the overall product we do not multiply it any zero we encounter
-# and keep a count of the number of zeroes that exist in the array
-# If there is more than one zero, we return an array of zeros
-# If there is one zero, we set all non-zero places in the transformed
-# array to 0 and all zero places to the overall product.
-# Time Complexity: O(N) and Space Complexity: O(N)
+"""
+Approach #1:
+Multiply all elements of the array to get the overall product. Then create
+the new array by dividing the overall product by each element of nums.
+Furthermore, to handle the edge case of some elements being zero, while
+building the overall product we do not multiply it any zero we encounter
+and keep a count of the number of zeroes that exist in the array
+If there is more than one zero, we return an array of zeros
+If there is one zero, we set all non-zero places in the transformed
+array to 0 and all zero places to the overall product.
+Time Complexity: O(N) and Space Complexity: O(N)
 
-# Approach #2:
-# To adhere to the restriction of the additional challenge, we
-# build a binary tree in the following fashion:
-# - Each of the numbers in the array is a leaf node
-# - Each internal node is formed by multiplying its two children
-# The root of the tree contains the product of the entire array,
-# its two children contain the product of two halves of the array
-# and subsequent children contain the products of increasingly smaller
-# partitions of the array.
-# Then, for each element in the array we trace its path from leaf to root
-# We define the complement child of a node along this path to be the one
-# that is not on the path.
-# It can be proven that the complement children of all nodes along this path
-# contain the products of all non-overlapping partitions that together
-# make up the entire array minus the element under consideration.
-# Therefore, multiplying the complement children along the path will give
-# the product of all elements in the array minus the current one.
-# Time Complexity: O(NlogN) and Space Complexity: O(NlogN)
+Approach #2:
+To adhere to the restriction of the additional challenge, we
+build a binary tree in the following fashion:
+- Each of the numbers in the array is a leaf node
+- Each internal node is formed by multiplying its two children
+The root of the tree contains the product of the entire array,
+its two children contain the product of two halves of the array
+and subsequent children contain the products of increasingly smaller
+partitions of the array.
+Then, for each element in the array we trace its path from leaf to root
+We define the complement child of a node along this path to be the one
+that is not on the path.
+It can be proven that the complement children of all nodes along this path
+contain the products of all non-overlapping partitions that together
+make up the entire array minus the element under consideration.
+Therefore, multiplying the complement children along the path will give
+the product of all elements in the array minus the current one.
+Time Complexity: O(NlogN) and Space Complexity: O(NlogN)
 
-# We implement the approach that adheres to the constraint of the
-# additional challenge
+We implement the approach that adheres to the constraint of the
+additional challenge.
+"""
+
 
 from components import Solver
 

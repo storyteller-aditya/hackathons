@@ -1,23 +1,29 @@
-# Given an array of integers, find the first missing positive 
-# integer in linear time and constant space. The array can 
-# contain duplicates and negative numbers as well.
-# You can modify the input array in-place.
-# Example: The array [3, 4, -1, 1] should give 2 and the array
-# [1, 2, 0] should give 3.
+"""
+Problem:
+Given an array of integers, find the first missing positive 
+integer in linear time and constant space. The array can 
+contain duplicates and negative numbers as well.
+You can modify the input array in-place.
+Example: The array [3, 4, -1, 1] should give 2 and the array
+[1, 2, 0] should give 3.
+"""
 
-# Approach:
-# We begin by removing negative numbers in-place and then finding
-# the minimum of the array. 
-# After that we turn the array into a set to reduce the time complexity
-# of checking whether a number exists in the input array to O(1).
-# Finally, we start with the min_val + 1 and check whether it exists
-# in the set. If so, we check for min_value + 2, min_value + 3 and so on
-# until we finally arrive at a number that does not exist.
-# This number is the first positive hole to be returned.
-# The time complexity of this approach is O(N) because we need to perform
-# at most as many look ups as elements in an array in the worst case
-# scenario which occurs when the array is of the form [1, 2, ..., N]
-# i.e. when it has no holes at all.
+"""
+Approach:
+We begin by removing negative numbers in-place and then finding
+the minimum of the array. 
+After that we turn the array into a set to reduce the time complexity
+of checking whether a number exists in the input array to O(1).
+Finally, we start with the min_val + 1 and check whether it exists
+in the set. If so, we check for min_value + 2, min_value + 3 and so on
+until we finally arrive at a number that does not exist.
+This number is the first positive hole to be returned.
+The time complexity of this approach is O(N) because we need to perform
+at most as many look ups as elements in an array in the worst case
+scenario which occurs when the array is of the form [1, 2, ..., N]
+i.e. when it has no holes at all.
+"""
+
 
 from components import Solver
 

@@ -1,26 +1,32 @@
-# Given the mapping a=1, b=2, ..., z=26 and an encoded message, count
-# the number of ways in which it can be decoded.
-# Example: 111 can be decoded as aaa or ak or ka. Therefore the output
-# should be 3. 
-# You can assume that all messages are decodable.
+"""
+Problem:
+Given the mapping a=1, b=2, ..., z=26 and an encoded message, count
+the number of ways in which it can be decoded.
+Example: 111 can be decoded as aaa or ak or ka. Therefore the output
+should be 3. 
+You can assume that all messages are decodable.
+"""
 
-# Approach:
-# Let C(k) be the count of the number of ways upto index k of the string.
-# Since the mapping can at most be a two digit number, it is apt to attempt
-# to calculate C(k+2) assuming C(k) and C(k+1) has been computed because
-# two possible cases can exist:
-# - If the string has been decoded till the kth index and string[k+1] and
-#   string[k+2] combined is valid, then we must include a contribution of
-#   C(k) towards C(k+2)
-# - If the string has been decoded till the k+1th index and string[k+2] is 
-#   valid, then we must include a contribution of C(k+1) towards C(k+2)
-# This can be put mathematically as:
-# C(k+2) = (
-#     C(k) * [1 if string[k+1] and string[k+2] are together valid else 0]
-#     + C(k+1) * [1 if string[k+2] is individually valid else 0]
-# )
-# Thereafter we can iterate through the string, computing C(k+2) from the
-# prior two existing values.
+"""
+Approach:
+Let C(k) be the count of the number of ways upto index k of the string.
+Since the mapping can at most be a two digit number, it is apt to attempt
+to calculate C(k+2) assuming C(k) and C(k+1) has been computed because
+two possible cases can exist:
+- If the string has been decoded till the kth index and string[k+1] and
+  string[k+2] combined is valid, then we must include a contribution of
+  C(k) towards C(k+2)
+- If the string has been decoded till the k+1th index and string[k+2] is 
+  valid, then we must include a contribution of C(k+1) towards C(k+2)
+This can be put mathematically as:
+C(k+2) = (
+    C(k) * [1 if string[k+1] and string[k+2] are together valid else 0]
+    + C(k+1) * [1 if string[k+2] is individually valid else 0]
+)
+Thereafter we can iterate through the string, computing C(k+2) from the
+prior two existing values.
+"""
+
 
 from components import Solver
 
