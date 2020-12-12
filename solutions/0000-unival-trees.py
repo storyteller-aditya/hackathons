@@ -26,8 +26,9 @@ complexity is given as O()
 """
 
 
-from components import Solver
 from collections import namedtuple
+
+from components import Solver
 
 
 class Node:
@@ -104,8 +105,6 @@ def count_unival_trees(root_node):
 		self_count += 1
 	# Return the results from probing root_node
 	return unival_count_ret_val(count=self_count, is_child_unival=self_unival)
-
-
 
 
 class ProblemSolver(Solver):
