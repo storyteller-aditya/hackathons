@@ -25,6 +25,7 @@ C(k+2) = (
 )
 Thereafter we can iterate through the string, computing C(k+2) from the
 prior two existing values.
+Time Complexity: O(n) and Space Complexity: O(1)
 """
 
 
