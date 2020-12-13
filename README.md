@@ -1,6 +1,6 @@
 # Solutions to LeetCode Problems
 
-This repository holds the solutions to various LeetCode / Daily COding problems that I have practiced over time.
+This repository holds the solutions to various LeetCode / Daily Coding problems that I have practiced over time.
 
 ## Composition of the Repo
 - components: This package defines the classes that make up every solution:
